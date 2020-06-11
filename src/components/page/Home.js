@@ -9,7 +9,7 @@ class Home extends React.Component {
                         <div className="hero-content app-hero-content text-center">
                             <div className="row justify-content-md-center">
                                 <div className="col-md-10">
-                                    <h1 className="wow fadeInUp" data-wow-delay="0s">e - Lapor Pemerintah Kabupaten Jayapura</h1>
+                                    <h1 className="wow fadeInUp" data-wow-delay="0s">e - Aduan Pemerintah Kabupaten Jayapura</h1>
                                     <p className="wow fadeInUp" data-wow-delay="0.2s">
                                         Masyarakat dapat melakukan pengaduan atas dugaan adanya gratifikasi, korupsi, manipulasi dan sejenisnya yang berpotensi merugikan negara dan
                                         ambil peran dalam mewujudkan pelayanan masyarakat yang lebih baik.
