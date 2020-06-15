@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 class Home extends React.Component {
     render() {
@@ -15,7 +16,7 @@ class Home extends React.Component {
                                         ambil peran dalam mewujudkan pelayanan masyarakat yang lebih baik.
                                     </p>
                                     
-                                    <button className="btn btn-primary btn-action" data-wow-delay="0.2s" href="#">FORM PENGADUAN</button>
+                                    <button className="btn btn-primary btn-action" data-wow-delay="0.2s"><Link to="/FormAduan" /></button>
                                 </div>
                                 <div className="col-md-12">
                                     <div className="hero-image">

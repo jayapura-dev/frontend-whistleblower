@@ -4,6 +4,7 @@ import { BrowserRouter, Switch, Route } from 'react-router-dom';
 import MasterLayout from './MasterLayout';
 import Home from './page/Home';
 import TataCara from './page/TataCara';
+import FormAduan from './page/FormAduan';
 
 class App extends React.Component {
     render() {
@@ -14,7 +15,7 @@ class App extends React.Component {
                     <div className="main" id="main">
                         <Switch>
                             <Route path="/" exact component={Home} />
-                            <Route path="/Hotline" component="#" />
+                            <Route path="/FormAduan" component={FormAduan} />
                         </Switch>
                     </div>
                     <TataCara />

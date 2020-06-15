@@ -7,8 +7,7 @@
 </p>
 
 ## Tentang Whistleblower Sistem :
-  - Whistle Blower Adalah Sistem Pengaduan Electronik yang dibuat khusus untuk Lembaga / Dinas
-  yang menjalankan Fungsi pemeriksaan Keuangan aset dll.
+  - UI Frontend untuk Whistleblower System
 
   ----------------------------------------------------------------------------------------------------------------------
 
@@ -24,9 +23,32 @@
   - Redux
 
 * Backend :
-  - [Backend Whistle](https://github.com/Ekhel/whistleblower)
+  - [Backend Whistle](https://github.com/jayapura-dev/backend-whistleblower)
 
 * HOST
   - [Server VPS]()
 
 -----------------------------------------------------------------------------------------------------------------------
+
+## Progres Pembuatan & Pengembangan :
+
+* *Kamis 11 Mei 2020*
+  - Buat Project [Solved]
+  - Buat App frontend-whistleblower [Solved]
+  - Buat repository [Solved]
+
+* *Jum'at 12 Mei 2020*
+  - Ganti Template [Solved]
+  - Buat Base Layout (MasterLayout) Template [Solved]
+  - Buat Halaman Home [Solved]
+  - Buat Halaman Tata Cara [Solved]
+
+* *Sabtu 13 Juni 2020*
+  - Install react-router-dom [Solved]
+  - Install axios [Solved]
+
+* *Senin 15 Juni 2020*
+  - Buat Halaman Form Aduan [Solved]
+  - Setup GET data Distrik & Kampung [Solved]
+  - Setup GET data Kategori [Soveld]  
+  - Setup POST Data Form Aduan -> Backend [Solved]

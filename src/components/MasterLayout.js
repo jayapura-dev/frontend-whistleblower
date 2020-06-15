@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const Header = () => {
     return(
@@ -14,16 +15,16 @@ const Header = () => {
                             <ul className="navbar-nav mr-auto">
                             </ul>
                             <ul className="navbar-nav my-2 my-lg-0">
-                            <li className="nav-item">
-                                <a className="nav-link page-scroll" href="#main">Home</a>
-                            </li>
-                            <li className="nav-item">
-                                <a className="nav-link page-scroll" href="#services">Aduan</a>
-                            </li>
-                            <li className="nav-item">
-                                <a className="nav-link page-scroll" href="#features">Login</a>
-                            </li>
-                        </ul>
+                                <li className="nav-link page-scroll">
+                                    <Link to="/" >Home</Link>
+                                </li>
+                                <li className="nav-link page-scroll">
+                                    <Link to="/FormAduan" >Aduan</Link>
+                                </li>
+                                <li className="nav-link page-scroll">
+                                    <Link to="/">Login</Link>
+                                </li>
+                            </ul>
                         </div>
                     </div>
                 </nav>
