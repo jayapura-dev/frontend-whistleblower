@@ -32,7 +32,7 @@
 
 ## Consumsi Web Services ( API )
 
-<table class="table">
+<table class="small table">
     <thead>
       <tr>
         <th>No</th>
