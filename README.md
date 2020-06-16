@@ -30,6 +30,35 @@
 
 -----------------------------------------------------------------------------------------------------------------------
 
+## Consumsi Web Services ( API )
+
+<table class="table">
+    <thead>
+      <tr>
+        <th>No</th>
+        <th>Halaman</th>
+        <th>End Point</th>
+        <th>Element</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>1</td>
+        <td>Form Aduan</td>
+        <td>http://127.0.0.1:8000/api/kategori/</td>
+        <td>Dropdownlist (Kategori)</td>
+      </tr>
+      <tr>
+        <td>2</td>
+        <td>Form Aduan</td>
+        <td>http://127.0.0.1:8000/api/distrik/</td>
+        <td>Dropdownlist (Distrik)</td>
+      </tr>
+    </tbody>
+</table>
+
+-----------------------------------------------------------------------------------------------------------------------
+
 ## Progres Pembuatan & Pengembangan :
 
 * *Kamis 11 Mei 2020*
@@ -52,3 +81,6 @@
   - Setup GET data Distrik & Kampung [Solved]
   - Setup GET data Kategori [Soveld]  
   - Setup POST Data Form Aduan -> Backend [Solved]
+
+* *Selasa 16 Juni 2020*
+  - Buat Halaman PerunjukAduan [solved]

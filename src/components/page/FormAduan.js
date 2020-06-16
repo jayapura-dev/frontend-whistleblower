@@ -1,5 +1,7 @@
+import '../../partialstyle/radiobutton.css';
 import React from 'react';
 import axios from 'axios';
+import { Link } from 'react-router-dom';
 import backend from '../../apis/backend';
 
 class FormAduan extends React.Component {
@@ -12,6 +14,8 @@ class FormAduan extends React.Component {
     });
 
     async componentDidMount() {
+        document.title = "Form Pengaduan"
+
         const resdistrik = await backend.get('/distrik');
         const reskategori = await backend.get('/kategori');
 
@@ -47,6 +51,7 @@ class FormAduan extends React.Component {
         const distrik = event.target.elements.distrik.value;
         const kampung = event.target.elements.kampung.value;
         const deskripsi_aduan = event.target.elements.deskripsi_aduan.value;
+        const anonim = event.target.elements.anonim.value;
 
         const FormPost = new FormData()
 
@@ -58,6 +63,7 @@ class FormAduan extends React.Component {
         FormPost.append('distrik', distrik);
         FormPost.append('kampung', kampung);
         FormPost.append('deskripsi_aduan', deskripsi_aduan);
+        FormPost.append('anonim', anonim);
         FormPost.append('file', this.state.FileUpload);
 
         await axios.post('http://127.0.0.1:8000/api/aduan/', FormPost)
@@ -70,7 +76,7 @@ class FormAduan extends React.Component {
     
     render(){
         return (
-            <div className="hero-section">
+            <div>
                 <div className="hero-section app-hero">
                     <div className="container">
                         <div className="hero-content app-hero-content text-center">
@@ -92,7 +98,10 @@ class FormAduan extends React.Component {
                                 <div className="container-fluid">
                                     <div className="alert alert-info">
                                         <h1>Perhatian !! <br/>Mohon Isilah Form Pengaduan dengan Data yang benar, dan tidak Ambigu, Jika Belum Mengerti dengan Isian Form Silahkan Pergi ke Tata Cara Pengisian Form Aduan.</h1> <br />
-                                        <button className="btn btn-primary">CARA MENGISI FORM ADUAN</button>
+                                        <Link to="/PetunjukAduan">
+                                            <button className="btn btn-primary">CARA MENGISI FORM ADUAN</button>
+                                        </Link>
+                                        
                                     </div>
                                     <br />
                                     <form onSubmit={this.onButtonSubmit} className="form">
@@ -175,14 +184,27 @@ class FormAduan extends React.Component {
                                                         <input type="file" className="form-control" onChange={this.fileSelected} name="file" />
                                                     </div>
                                                 </div>
-                                                <div className="alert alert-warning">
-                                                    <p>Mohon Periksa Kembali Aduan Anda Dengan Benar! Karena Setelah Anda Mengirim, Aduan Tidak Dapat di Edit (Ubah)</p>
+                                                <div className="form-group">
+                                                    <label className="labeltext">Anda Mengadu Sebagai Anonim ? (Kami Tidak Akan Menampilkan Nama anda Pada Laporan Kami) </label><br />
+                                                    <div className="col-xs-6">
+                                                         <div className="form-check-inline">
+                                                            <label className="customradio"><span className="radiotextsty">Ya</span>
+                                                                <input type="radio" defaultChecked="True" value="tampil" name="anonim" /><span className="checkmark"></span>
+                                                            </label>
+                                                           <div className="space-div"></div>
+                                                            <label className="customradio"><span className="radiotextsty">Tidak</span>
+                                                                <input type="radio" name="anonim" value="tidak" /><span className="checkmark"></span>
+                                                            </label>
+                                                        </div>
+                                                    </div>
                                                 </div>
-                                                <button type="submit" className="btn btn-success btn-outline">Kirim Aduan</button>
+                                                <div className="alert alert-warning">
+                                                    <h2>Mohon Periksa Kembali Aduan Anda Dengan Benar! Karena Setelah Anda Mengirim, Aduan Tidak Dapat di Edit (Ubah)</h2>
+                                                </div>
+                                                <button type="submit" className="btn btn-primary"><i className="fa fa-send"></i>KIRIM PENGADUAN</button>
                                             </div>
                                         </div>
                                     </form>
-                                   
                                 </div>
                             </div>
                         </div>

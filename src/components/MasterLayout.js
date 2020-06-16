@@ -19,7 +19,7 @@ const Header = () => {
                                     <Link to="/" >Home</Link>
                                 </li>
                                 <li className="nav-link page-scroll">
-                                    <Link to="/FormAduan" >Aduan</Link>
+                                    <Link to="/CariAduan" >Cek Aduan</Link>
                                 </li>
                                 <li className="nav-link page-scroll">
                                     <Link to="/">Login</Link>

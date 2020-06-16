@@ -2,6 +2,10 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 class Home extends React.Component {
+    componentDidMount() {
+        document.title = "e - Pemgaduan | Inpektorat Kab Jayapura"
+    }
+    
     render() {
         return (
             <div>
@@ -15,8 +19,10 @@ class Home extends React.Component {
                                         Masyarakat dapat melakukan pengaduan atas dugaan adanya gratifikasi, korupsi, manipulasi dan sejenisnya yang berpotensi merugikan negara dan
                                         ambil peran dalam mewujudkan pelayanan masyarakat yang lebih baik.
                                     </p>
+                                    <Link to="/FormAduan">
+                                        <button className="btn btn-primary btn-action" data-wow-delay="0.2s"><Link to="/FormAduan"></Link>FORM ADUAN</button>
+                                    </Link>
                                     
-                                    <button className="btn btn-primary btn-action" data-wow-delay="0.2s"><Link to="/FormAduan" /></button>
                                 </div>
                                 <div className="col-md-12">
                                     <div className="hero-image">
