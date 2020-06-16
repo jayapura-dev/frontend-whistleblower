@@ -39,6 +39,7 @@
         <th>Halaman</th>
         <th>End Point</th>
         <th>Element</th>
+        <th>Method</th>
       </tr>
     </thead>
     <tbody>
@@ -47,12 +48,28 @@
         <td>Form Aduan</td>
         <td>http://127.0.0.1:8000/api/kategori/</td>
         <td>Dropdownlist (Kategori)</td>
+        <td> GET </td>
       </tr>
       <tr>
         <td>2</td>
         <td>Form Aduan</td>
         <td>http://127.0.0.1:8000/api/distrik/</td>
         <td>Dropdownlist (Distrik)</td>
+        <td> GET </td>
+      </tr>
+      <tr>
+        <td>3</td>
+        <td>Form Aduan</td>
+        <td>http://127.0.0.1:8000/api/distrik/{params:id_distrik}</td>
+        <td>Nested Dropdownlist (Kampung)</td>
+        <td> GET </td>
+      </tr>
+      <tr>
+        <td>4</td>
+        <td>Form Aduan</td>
+        <td>http://127.0.0.1:8000/api/aduan/</td>
+        <td>Button Submit (Data Form)</td>
+        <td> POST, GET (Callback) </td>
       </tr>
     </tbody>
 </table>
