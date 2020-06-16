@@ -100,4 +100,6 @@
   - Setup POST Data Form Aduan -> Backend [Solved]
 
 * *Selasa 16 Juni 2020*
-  - Buat Halaman PerunjukAduan [solved]
+  - Buat Halaman Petunjuk Aduan [Solved]
+  - Buat Halaman Tracking Aduan [Soveld]
+  - Setup backend query untuk Tracking Aduan [Solved]

@@ -1,10 +1,12 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import backend from '../../apis/backend';
 
 class PentunjukAduan extends React.Component{
     state = ({ petunjuk: [] });
 
     async componentDidMount() {
+        document.title = "Petunjuk Penginputan Pengaduan"
         const response = await backend.get('/petunjuk/');
 
         console.log(response);
@@ -24,6 +26,9 @@ class PentunjukAduan extends React.Component{
                                     <p className="wow fadeInUp" data-wow-delay="0.2s">
                                         PETUNJUK PENULISAN PENGADUAN
                                     </p>
+                                    <Link to="/FormAduan">
+                                        <button className="btn btn-primary btn-action" data-wow-delay="0.2s"><Link to="/FormAduan"></Link>FORM ADUAN</button>
+                                    </Link>
                                 </div>
                             </div>
                         </div>

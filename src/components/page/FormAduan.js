@@ -10,7 +10,8 @@ class FormAduan extends React.Component {
         datakategori: [], 
         datakampung: [], 
         id_distrik: '',
-        FileUpload: null
+        FileUpload: null,
+        num: ''
     });
 
     async componentDidMount() {
@@ -39,6 +40,13 @@ class FormAduan extends React.Component {
             FileUpload: event.target.files[0] 
         });
     }
+
+    onNumber = event => {
+      const re = /^[0-9\b]+$/;
+      if (event.target.value === '' || re.test(event.target.value)) {
+         this.setState({num: event.target.value})
+      }
+   }
 
     onButtonSubmit = async event => {
         event.preventDefault();
@@ -117,17 +125,17 @@ class FormAduan extends React.Component {
                                                 
                                                 <div className="form-group">
                                                     <div className="col-xs-6">
-                                                        <input type="text" className="form-control" name="nama_pengadu" placeholder="Nama Lengkap Anda" />
+                                                        <input type="text" className="form-control" name="nama_pengadu" placeholder="Nama Lengkap Anda" required={true} />
                                                     </div>
                                                 </div>
                                                 <div className="form-group">
                                                     <div className="col-xs-6">
-                                                        <input type="text" className="form-control" name="email" placeholder="Email Anda" />
+                                                        <input type="email" className="form-control" name="email" placeholder="Email Anda" required={true} />
                                                     </div>
                                                 </div>
                                                 <div className="form-group">
                                                     <div className="col-xs-6">
-                                                        <input type="text" className="form-control" name="no_telfon" placeholder="No Kontak Anda" />
+                                                        <input type="text" className="form-control" value={this.state.num} onChange={this.onNumber} required={true} name="no_telfon" placeholder="No Kontak Anda" />
                                                     </div>
                                                 </div>
                                                 <div className="form-group">
@@ -136,12 +144,12 @@ class FormAduan extends React.Component {
                                                 <hr />
                                                 <div className="form-group">
                                                     <div className="col-xs-6">
-                                                        <input type="text" className="form-control" name="title" placeholder="Judul Aduan Anda" />
+                                                        <input type="text" className="form-control" name="title" required={true} placeholder="Judul Aduan Anda" />
                                                     </div>
                                                 </div>
                                                 <div className="form-group">
                                                     <div className="col-xs-6">
-                                                        <select type="text" className="form-control" name="kategori">
+                                                        <select type="text" className="form-control" name="kategori" required={true}>
                                                             <option value="0">--- Pilih Kategori ---</option>
                                                             {this.state.datakategori.map(k => (
                                                                 <option key={k.id_kategori} value={k.id_kategori}>{k.nama_kategori} </option>
@@ -152,7 +160,7 @@ class FormAduan extends React.Component {
                                                 </div>
                                                 <div className="form-group">
                                                     <div className="col-xs-6">
-                                                        <select type="text" className="form-control" name="distrik" onChange={this.changeDistrik} value={this.state.id_distrik}>
+                                                        <select type="text" className="form-control" name="distrik" required={true} onChange={this.changeDistrik} value={this.state.id_distrik}>
                                                             <option value="0">--- Pilih Distrik ---</option>
                                                             {this.state.datadistrik.map(i => (
                                                                 <option key={i.id_distrik} value={i.id_distrik}>{i.nama_distrik} </option>
@@ -163,7 +171,7 @@ class FormAduan extends React.Component {
                                                 </div>
                                                 <div className="form-group">
                                                     <div className="col-xs-6">
-                                                        <select type="text" className="form-control" name="kampung">
+                                                        <select type="text" className="form-control" name="kampung" required={true}>
                                                             <option value="0">--- Pilih Kampung ---</option>
                                                             {this.state.datakampung.map(k => ( 
                                                                 <option key={k.id_kampung} value={k.id_kampung}>{k.nama_kampung}</option>

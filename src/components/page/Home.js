@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 
 class Home extends React.Component {
     componentDidMount() {
-        document.title = "e - Pemgaduan | Inpektorat Kab Jayapura"
+        document.title = "e - Aduan | Inpektorat Kab. Jayapura"
     }
     
     render() {
