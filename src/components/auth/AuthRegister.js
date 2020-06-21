@@ -68,12 +68,8 @@ class AuthRegister extends React.Component {
                         <div className="row justify-content-center">
                             <div className="col-12 col-md-10 col-lg-8">
                                 <article className="card-body mx-auto" style={articlestyle}>
-                                    <h4 className="card-title mt-3 text-center">FORM PENDAFTARAN AKUN</h4>
-                                    <p className="text-center">Sebelum Anda Melakukan Pengaduan Harap Agar daftar terlebih Dahulu Daftar Akun Agar Anda Dapat Mengontrol Aduan Anda</p>
-                                    
-                                    <p className="divider-text">
-                                        <span className="bg-light">FORM</span>
-                                    </p>
+                                    <h4 className="card-title mt-3 text-center">REGISTRASI AKUN</h4>
+                                    <br />
                                     <div className="card bg-light" >
                                         <form onSubmit={this.SubmitRegister} className="card card-lg" style={{padding: "10px"}}>
                                             <div className="form-group input-group">
@@ -101,7 +97,7 @@ class AuthRegister extends React.Component {
                                                 <input name="password2" onChange={this.onChange} value={password2} className="form-control" placeholder="Repeat password" type="text" />
                                             </div>
                                             <div className="form-group">
-                                                <button type="submit" className="btn btn-primary"> Buat Akun  </button>
+                                                <button type="submit" className="btn btn-primary btn-block"><i className="fa fa-users"></i> Buat Akun  </button>
                                             </div>
                                             <p className="divider-text">
                                                 <span className="bg-light">SUDAH ADA AKUN ? <Link to="/Login"><button className="btn btn-success">Login</button></Link></span>

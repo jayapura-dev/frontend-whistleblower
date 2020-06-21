@@ -10,11 +10,10 @@ const PrivateRouter = ({ component: Component, auth, ...rest }) => {
                 if(auth.isLoading){
                     return <h4>Authenticating . . .</h4>;
                 } else if (!auth.isAuthenticated){
-                    return <Redirect to="/Login" />
+                    return <Redirect to="/" />
                 } else {
                     return <Component {...props} />
                 }
-                
             }}
         />
     )

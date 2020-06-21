@@ -29,7 +29,7 @@ class AuthLogin extends React.Component {
 
     render() {
         if(this.props.isAuthenticated){
-            return <Redirect to="/FormAduan" />;
+            return <Redirect to='/FormAduan' />;
         }
         const articlestyle = {
             maxWidth: "400px"
@@ -56,7 +56,7 @@ class AuthLogin extends React.Component {
                             <div className="col-12 col-md-10 col-lg-8">
                                 <article className="card-body mx-auto" style={articlestyle}>
                                     <h4 className="card-title mt-3 text-center">FOM LOGIN</h4>
-                                    <p className="text-center">Anda Harus Login Untuk Menulis Pengaduan</p>
+                                    <p className="text-center">Anda Harus Login Terlebih Dahulu Untuk Menulis Pengaduan</p>
                                     <br />
                                     <div className="card bg-light" >
                                         <form onSubmit={this.SubmitLogin} className="card card-lg" style={{padding: "10px"}}>
@@ -73,10 +73,10 @@ class AuthLogin extends React.Component {
                                                 <input name="password" className="form-control" onChange={this.onChange} value={password} placeholder="password" type="text" />
                                             </div>
                                             <div className="form-group">
-                                                <button type="submit" className="btn btn-primary"> LOGIN </button>
+                                                <button type="submit" className="btn btn-success btn-block"><i className="fa fa-lock"></i> LOGIN </button>
                                             </div>
                                             <p className="divider-text">
-                                                <span className="bg-light">BELUM PUNYA AKUN ? <Link to="/Register"><button className="btn btn-success">DAFTAR AKUN</button></Link></span>
+                                                <span className="bg-light">BELUM PUNYA AKUN ? <Link to="/Register"><button className="btn btn-primary">DAFTAR AKUN</button></Link></span>
                                             </p>
                                         </form>
                                     </div>

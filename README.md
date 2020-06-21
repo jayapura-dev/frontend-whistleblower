@@ -152,3 +152,5 @@
   - Set Token ke Semua action Redux [Solved]
   - Buat Alers Messages dom [Solved]
   - Buat error reducers [Solved]
+  - Buat Pengaduan Reducer [Solved]
+  - Buat Pengaduan Actions [Solved]

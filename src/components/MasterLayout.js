@@ -21,14 +21,14 @@ class Header extends React.Component{
                 </ul>
                 <ul className="navbar-nav my-2 my-lg-0">
                     <li className="nav-link page-scroll">
-                        <Link to="/FormAduan" ><button className="btn btn-success">Pengaduan</button></Link>
+                        <Link to="/Pengaduan" ><button className="btn btn-success">Pengaduan</button></Link>
                     </li>
                      <div className="dropdown">
                         <button type="button" className="btn btn-primary dropdown-toggle" data-toggle="dropdown">
                             <strong><i className="fa fa-user"></i> {user ? `${user.username}` : ''}</strong>
                         </button>
                         <div className="dropdown-menu">
-                            <li onClick={this.props.UserLogout} className="dropdown-item" href="#">Logout</li>
+                            <button onClick={this.props.UserLogout} className="dropdown-item" href="#">Logout</button>
                         </div>
                     </div> 
                 </ul>

@@ -1,15 +1,16 @@
 import React, { Fragment } from 'react';
-import { HashRouter as Router, Route, Switch } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import { Provider } from 'react-redux';
 
 import { Provider as AlertProvider } from 'react-alert';
 import AlertTemplate from 'react-alert-template-basic';
 
 import MasterLayout from './MasterLayout';
+import Footer from './Footer';
 import Alerts from './Alerts';
 import Home from './page/Home';
 import PetunjukAduan from './page/PetunjukAduan';
-import CariAduan from './page/CariAduan';
+import Pengaduan from './page/Pengaduan';
 import TataCara from './page/TataCara';
 import FormAduan from './page/FormAduan';
 import Register from './auth/AuthRegister';
@@ -42,12 +43,13 @@ class App extends React.Component {
                                     <Route path="/" exact component={Home} />
                                     <Private path="/FormAduan" component={FormAduan} />
                                     <Route path="/PetunjukAduan" component={PetunjukAduan} />
-                                    <Route path="/CariAduan" component={CariAduan} />
+                                    <Private path="/Pengaduan" component={Pengaduan} />
                                     <Route path="/Register" component={Register} />
                                     <Route path="/Login" component={AuthLogin} />
                                 </Switch>
                             </div>
                             <TataCara />
+                            <Footer />
                         </Router>
                     </Fragment>                    
                 </AlertProvider>
