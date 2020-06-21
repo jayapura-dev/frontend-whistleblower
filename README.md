@@ -19,12 +19,13 @@
   - React
 
 * Library :
-  - Axios (Comunicate REST API)
-  - Redux
-  - React Redux
-  - Redux Thunk
-  - React Alert
-  - React Alert Template Basic
+  - React Router Dom (*npm install --save react-router-dom*)
+  - Axios (*npm install --save axios*)
+  - Redux (*npm install --save redux*)
+  - React Redux (*npm install --save react-redux*)
+  - Redux Thunk (*npm install --save redux-thunk*)
+  - React Alert (*npm install --save react-alert*)
+  - React Alert Template Basic (*npm install --save react-alert-template-basic*)
 
 * Backend :
   - [Backend Whistle](https://github.com/jayapura-dev/backend-whistleblower)
@@ -34,11 +35,11 @@
 
 -----------------------------------------------------------------------------------------------------------------------
 
-## Consumsi Web Services ( API )
+## Consumsi Web Services ( REST API )
 
 <table class="small table">
     <thead>
-      <tr>
+      <tr class="small">
         <th>No</th>
         <th>Halaman</th>
         <th>End Point</th>
@@ -47,56 +48,56 @@
       </tr>
     </thead>
     <tbody>
-      <tr>
+      <tr class="small">
         <td>1</td>
         <td>Form Aduan</td>
         <td>http://127.0.0.1:8000/api/kategori/</td>
         <td>Dropdownlist (Kategori)</td>
         <td> GET </td>
       </tr>
-      <tr>
+      <tr class="small">
         <td>2</td>
         <td>Form Aduan</td>
         <td>http://127.0.0.1:8000/api/distrik/</td>
         <td>Dropdownlist (Distrik)</td>
         <td> GET </td>
       </tr>
-      <tr>
+      <tr class="small">
         <td>3</td>
         <td>Form Aduan</td>
         <td>http://127.0.0.1:8000/api/distrik/{params:id_distrik}</td>
         <td>Nested Dropdownlist (Kampung)</td>
         <td> GET </td>
       </tr>
-      <tr>
+      <tr class="small">
         <td>4</td>
         <td>Form Aduan</td>
         <td>http://127.0.0.1:8000/api/aduan/</td>
         <td>Button Submit (Data Form)</td>
         <td> POST, GET (Callback) </td>
       </tr>
-      <tr>
+      <tr class="small">
         <td>5</td>
         <td>Register Auth API</td>
         <td>http://127.0.0.1:8000/api/auth/register</td>
         <td>-</td>
         <td> POST (Callback Result Token) </td>
       </tr>
-      <tr>
+      <tr class="small">
         <td>6</td>
         <td>Login Auth API</td>
         <td>http://127.0.0.1:8000/api/auth/login</td>
         <td>Redux</td>
         <td> POST (Callback Result Token) </td>
       </tr>
-      <tr>
+      <tr class="small">
         <td>6</td>
         <td>User Auth State (Session)</td>
         <td>http://127.0.0.1:8000/api/auth/user</td>
         <td>]Redux</td>
         <td> GET (Callback) </td>
       </tr>
-      <tr>
+      <tr class="small">
         <td>7</td>
         <td>User Auth Logout (Session)</td>
         <td>http://127.0.0.1:8000/api/auth/logout</td>
