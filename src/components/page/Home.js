@@ -19,8 +19,8 @@ class Home extends React.Component {
                                         Masyarakat dapat melakukan pengaduan atas dugaan adanya gratifikasi, korupsi, manipulasi dan sejenisnya yang berpotensi merugikan negara dan
                                         ambil peran dalam mewujudkan pelayanan masyarakat yang lebih baik.
                                     </p>
-                                    <Link to="/FormAduan">
-                                        <button className="btn btn-primary btn-action" data-wow-delay="0.2s"><Link to="/FormAduan"></Link>FORM ADUAN</button>
+                                    <Link to='/FormAduan'>
+                                        <button className="btn btn-primary btn-action" data-wow-delay="0.2s">FORM ADUAN</button>
                                     </Link>
                                     
                                 </div>

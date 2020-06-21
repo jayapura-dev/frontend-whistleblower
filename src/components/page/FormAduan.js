@@ -112,7 +112,7 @@ class FormAduan extends React.Component {
                                         
                                     </div>
                                     <br />
-                                    <form onSubmit={this.onButtonSubmit} className="form">
+                                    <form onSubmit={this.onButtonSubmit} style={{ padding: "15px" }}>
                                         <div className="card">
                                             <div className="card-header">
                                                 <h2>FORM PENGADUAN</h2>
@@ -209,7 +209,7 @@ class FormAduan extends React.Component {
                                                 <div className="alert alert-warning">
                                                     <h2>Mohon Periksa Kembali Aduan Anda Dengan Benar! Karena Setelah Anda Mengirim, Aduan Tidak Dapat di Edit (Ubah)</h2>
                                                 </div>
-                                                <button type="submit" className="btn btn-primary"><i className="fa fa-send"></i>KIRIM PENGADUAN</button>
+                                                <button type="submit" className="btn btn-primary"><i className="fa fa-send"></i> KIRIM PENGADUAN</button>
                                             </div>
                                         </div>
                                     </form>

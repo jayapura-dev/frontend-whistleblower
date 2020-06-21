@@ -21,6 +21,10 @@
 * Library :
   - Axios (Comunicate REST API)
   - Redux
+  - React Redux
+  - Redux Thunk
+  - React Alert
+  - React Alert Template Basic
 
 * Backend :
   - [Backend Whistle](https://github.com/jayapura-dev/backend-whistleblower)
@@ -71,6 +75,27 @@
         <td>Button Submit (Data Form)</td>
         <td> POST, GET (Callback) </td>
       </tr>
+      <tr>
+        <td>5</td>
+        <td>Register Auth API</td>
+        <td>http://127.0.0.1:8000/api/auth/register</td>
+        <td>-</td>
+        <td> POST (Callback Result Token) </td>
+      </tr>
+      <tr>
+        <td>6</td>
+        <td>Login Auth API</td>
+        <td>http://127.0.0.1:8000/api/auth/login</td>
+        <td>Redux</td>
+        <td> POST (Callback Result Token) </td>
+      </tr>
+      <tr>
+        <td>6</td>
+        <td>User Auth State (Session)</td>
+        <td>http://127.0.0.1:8000/api/auth/user</td>
+        <td>]Redux</td>
+        <td> POST (Callback) </td>
+      </tr>
     </tbody>
 </table>
 
@@ -103,3 +128,13 @@
   - Buat Halaman Petunjuk Aduan [Solved]
   - Buat Halaman Tracking Aduan [Soveld]
   - Setup backend query untuk Tracking Aduan [Solved]
+
+* *Sabtu 20 Juni 2020*
+  - Install Redux, React Redux, Redux Thunk [Solved]
+  - Install React Alert, React Alert Template Basic [Solved]
+  - Buat Actions untuk Redux [Solved]
+  - Buat Reducer untuk Redux [Solved]
+  - Buat Action Types [Solved]
+  - Buat Halaman Register Untuk Register User API -> Backend [Solved]
+  - Buat Private Route Untuk Proteksi Halaman Setelah Login Auth API [Solved]
+  - Buat Halaman Login Untuk Auth API -> Backend [Solved]
