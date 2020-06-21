@@ -21,14 +21,11 @@ class Header extends React.Component{
                 </ul>
                 <ul className="navbar-nav my-2 my-lg-0">
                     <li className="nav-link page-scroll">
-                        <Link to="/" >Home</Link>
-                    </li>
-                    <li className="nav-link page-scroll">
-                        <Link to="/" >Aduan</Link>
+                        <Link to="/FormAduan" ><button className="btn btn-success">Pengaduan</button></Link>
                     </li>
                      <div className="dropdown">
                         <button type="button" className="btn btn-primary dropdown-toggle" data-toggle="dropdown">
-                            <strong>{user ? `${user.username}` : ''}</strong>
+                            <strong><i className="fa fa-user"></i> {user ? `${user.username}` : ''}</strong>
                         </button>
                         <div className="dropdown-menu">
                             <li onClick={this.props.UserLogout} className="dropdown-item" href="#">Logout</li>
@@ -44,10 +41,10 @@ class Header extends React.Component{
                 </ul>
                 <ul className="navbar-nav my-2 my-lg-0">
                     <li className="nav-link page-scroll">
-                        <Link to="/" >Home</Link>
+                        <Link to="/CariAduan"><button className="btn btn-primary"><i className="fa fa-bookmark"></i> Cek Aduan</button></Link>
                     </li>
                     <li className="nav-link page-scroll">
-                        <Link to="/Login">Login</Link>
+                        <Link to="/Login"><button className="btn btn-primary"><i className="fa fa-lock"></i> Login</button></Link>
                     </li>
                 </ul>
             </div>

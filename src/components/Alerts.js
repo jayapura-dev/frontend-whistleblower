@@ -1,9 +1,9 @@
-import React, { Component, Fragment } from 'react';
+import React, { Fragment } from 'react';
 import { withAlert } from 'react-alert';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 
-export class Notif extends Component {
+class Alerts extends React.Component {
   static propTypes = {
     error: PropTypes.object.isRequired,
     message: PropTypes.object.isRequired,
@@ -36,4 +36,4 @@ const mapStateToProps = (state) => ({
   message: state.messages,
 });
 
-export default connect(mapStateToProps)(withAlert()(Notif));
+export default connect(mapStateToProps)(withAlert()(Alerts));

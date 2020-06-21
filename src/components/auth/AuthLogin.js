@@ -1,10 +1,11 @@
 import React from 'react';
-import { Redirect } from 'react-router-dom';
+import { Redirect, Link } from "react-router-dom";
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import { login } from '../../actions/auth'; 
 
 class AuthLogin extends React.Component {
+
     state = { username: '', password: '' };
          
     static propTypes = {
@@ -19,6 +20,7 @@ class AuthLogin extends React.Component {
             this.state.username,
             this.state.password
         );
+
     }
 
     onChange = event => this.setState({
@@ -54,6 +56,8 @@ class AuthLogin extends React.Component {
                             <div className="col-12 col-md-10 col-lg-8">
                                 <article className="card-body mx-auto" style={articlestyle}>
                                     <h4 className="card-title mt-3 text-center">FOM LOGIN</h4>
+                                    <p className="text-center">Anda Harus Login Untuk Menulis Pengaduan</p>
+                                    <br />
                                     <div className="card bg-light" >
                                         <form onSubmit={this.SubmitLogin} className="card card-lg" style={{padding: "10px"}}>
                                             <div className="form-group input-group">
@@ -71,6 +75,9 @@ class AuthLogin extends React.Component {
                                             <div className="form-group">
                                                 <button type="submit" className="btn btn-primary"> LOGIN </button>
                                             </div>
+                                            <p className="divider-text">
+                                                <span className="bg-light">BELUM PUNYA AKUN ? <Link to="/Register"><button className="btn btn-success">DAFTAR AKUN</button></Link></span>
+                                            </p>
                                         </form>
                                     </div>
                                 </article>

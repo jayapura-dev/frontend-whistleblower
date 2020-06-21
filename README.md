@@ -94,7 +94,14 @@
         <td>User Auth State (Session)</td>
         <td>http://127.0.0.1:8000/api/auth/user</td>
         <td>]Redux</td>
-        <td> POST (Callback) </td>
+        <td> GET (Callback) </td>
+      </tr>
+      <tr>
+        <td>7</td>
+        <td>User Auth Logout (Session)</td>
+        <td>http://127.0.0.1:8000/api/auth/logout</td>
+        <td>]Redux</td>
+        <td> POST </td>
       </tr>
     </tbody>
 </table>
@@ -138,3 +145,9 @@
   - Buat Halaman Register Untuk Register User API -> Backend [Solved]
   - Buat Private Route Untuk Proteksi Halaman Setelah Login Auth API [Solved]
   - Buat Halaman Login Untuk Auth API -> Backend [Solved]
+
+* *Minggu 21 Juni 2020*
+  - Buat Fungsi Logout API [Solved]
+  - Set Token ke Semua action Redux [Solved]
+  - Buat Alers Messages dom [Solved]
+  - Buat error reducers [Solved]

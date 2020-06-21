@@ -1,44 +1,54 @@
 import React from 'react';
-import  { Link } from 'react-router-dom';
-import history from '../../history';
-import axios from 'axios';
-import '../../partialstyle/registerstyle.css';
+import { Redirect, Link } from "react-router-dom";
+import { connect } from 'react-redux';
+import PropTypes from 'prop-types';
+import { register } from '../../actions/auth'; 
+import { createMessage } from '../../actions/messages';
 
-class Register extends React.Component {
-
-    componentDidMount() {
-        document.title = "DAFTAR AKUN";
+class AuthRegister extends React.Component {
+    state = {
+        username: '',
+        email: '',
+        password: '',
+        password2: ''
     }
 
-    SubmitRegister = async event => {
+    static propTypes = {
+        register: PropTypes.func.isRequired,
+        isAuthenticated: PropTypes.bool,
+     };
+
+    SubmitRegister = event => {
         event.preventDefault();
 
-        const username = event.target.elements.username.value;
-        const email = event.target.elements.email.value;
-        const password = event.target.elements.password.value;
-
-        const FormRegister = new FormData()
-
-        FormRegister.append('username', username);
-        FormRegister.append('email', email);
-        FormRegister.append('password', password);
-
-        await axios.post('http://127.0.0.1:8000/api/auth/register', FormRegister)
-        .then(response => {
-            console.log(response)
-            history.push('/Login');
-        }).catch(error => {
-            console.log(error.response)
-        });
-
-
+        const { username, email, password, password2 } = this.state;
+        if (password !== password2) {
+            this.props.createMessage({ passwordNotMatch: 'Passwords do not match' })
+        } else {
+            const newUser = {
+                username,
+                email,
+                password,
+            };
+            this.props.register(newUser);
+        }
     }
-    
-    render(){
+
+    onChange = event => this.setState({
+        [event.target.name]: event.target.value 
+    });
+
+    render() {
         const articlestyle = {
             maxWidth: "400px"
         }
-        return (
+
+        if (this.props.isAuthenticated) {
+            return <Redirect to="/FormAduan" />;
+        }
+
+        const { username, email, password, password2 } = this.state;
+        return(
             <div>
                 <div className="hero-section app-hero">
                     <div className="container">
@@ -70,25 +80,25 @@ class Register extends React.Component {
                                                 <div className="input-group-prepend">
                                                     <span className="input-group-text"> <i className="fa fa-user"></i> </span>
                                                 </div>
-                                                <input name="username" className="form-control" placeholder="Username" type="text" />
+                                                <input name="username" onChange={this.onChange} value={username} className="form-control" placeholder="Username" type="text" />
                                             </div>
                                             <div className="form-group input-group">
                                                 <div className="input-group-prepend">
                                                     <span className="input-group-text"> <i className="fa fa-envelope"></i> </span>
                                                 </div>
-                                                <input name="email" className="form-control" placeholder="Email address" type="email" />
+                                                <input name="email" onChange={this.onChange} value={email} className="form-control" placeholder="Email address" type="email" />
                                             </div>
                                             <div className="form-group input-group">
                                                 <div className="input-group-prepend">
                                                     <span className="input-group-text"> <i className="fa fa-lock"></i> </span>
                                                 </div>
-                                                <input name="password" className="form-control" placeholder="password" type="text" />
+                                                <input name="password" onChange={this.onChange} value={password} className="form-control" placeholder="password" type="text" />
                                             </div>
                                             <div className="form-group input-group">
                                                 <div className="input-group-prepend">
                                                     <span className="input-group-text"> <i className="fa fa-lock"></i> </span>
                                                 </div>
-                                                <input name="password2" className="form-control" placeholder="Repeat password" type="text" />
+                                                <input name="password2" onChange={this.onChange} value={password2} className="form-control" placeholder="Repeat password" type="text" />
                                             </div>
                                             <div className="form-group">
                                                 <button type="submit" className="btn btn-primary"> Buat Akun  </button>
@@ -107,6 +117,10 @@ class Register extends React.Component {
             </div>
         );
     }
-};
+}
 
-export default Register;
+const mapStateToProps = state => ({ 
+    auth: state.auth.isAuthenticated
+});
+
+export default connect(mapStateToProps, { register })(AuthRegister);
