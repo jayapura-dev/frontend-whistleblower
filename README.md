@@ -154,3 +154,7 @@
   - Buat error reducers [Solved]
   - Buat Pengaduan Reducer [Solved]
   - Buat Pengaduan Actions [Solved]
+
+* *Kamis 25 Juni 2020*
+  - Buat Fungsi POST (Create) Pengaduan dengan Redux [Solved]
+  - Buat Fungsi Filter Pengaduan dengan User [Solved]

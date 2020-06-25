@@ -1,10 +1,12 @@
-import '../../partialstyle/radiobutton.css';
 import React from 'react';
-import axios from 'axios';
-import { Link } from 'react-router-dom';
-import backend from '../../apis/backend';
+import '../../partialstyle/radiobutton.css';
+import { Redirect, Link } from 'react-router-dom';
+import { connect } from 'react-redux';
+import backend from '../../apis/backend'
+import PropTypes from 'prop-types';
+import { CreateAduan } from '../../actions/pengaduan';
 
-class FormAduan extends React.Component {
+class Create extends React.Component {
     state = ({ 
         datadistrik: [], 
         datakategori: [], 
@@ -13,6 +15,10 @@ class FormAduan extends React.Component {
         FileUpload: null,
         num: ''
     });
+
+    static propTypes = {
+        CreateAduan: PropTypes.func.isRequired,
+    };
 
     async componentDidMount() {
         document.title = "Form Pengaduan"
@@ -48,7 +54,7 @@ class FormAduan extends React.Component {
       }
    }
 
-    onButtonSubmit = async event => {
+   onButtonSubmit = async event => {
         event.preventDefault();
 
         const title = event.target.elements.title.value;
@@ -74,14 +80,10 @@ class FormAduan extends React.Component {
         FormPost.append('anonim', anonim);
         FormPost.append('file', this.state.FileUpload);
 
-        await axios.post('http://127.0.0.1:8000/api/aduan/', FormPost)
-        .then(response => {
-            console.log(response)
-        }).catch(error => {
-            console.log(error.response)
-        });
+        this.props.CreateAduan(FormPost)
+        return <Redirect to='/Pengaduan' />
     }
-    
+
     render(){
         return (
             <div>
@@ -220,6 +222,6 @@ class FormAduan extends React.Component {
             </div>
         );
     }
-};
+}
 
-export default FormAduan;
+export default connect(null, { CreateAduan })(Create);

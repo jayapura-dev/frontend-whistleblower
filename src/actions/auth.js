@@ -94,7 +94,7 @@ export const tokenSet = (getState) => {
 
   const set = {
     headers: {
-      'Content-Type': 'application/json',
+      'Content-Type': 'multipart/form-data',
     },
   };
 

@@ -7,6 +7,11 @@ import { login } from '../../actions/auth';
 class AuthLogin extends React.Component {
 
     state = { username: '', password: '' };
+
+    componentDidMount() {
+        document.title = 'Login | e - Pengaduan'
+    }
+    
          
     static propTypes = {
         login: PropTypes.func.isRequired,
@@ -29,7 +34,7 @@ class AuthLogin extends React.Component {
 
     render() {
         if(this.props.isAuthenticated){
-            return <Redirect to='/FormAduan' />;
+            return <Redirect to='/pengaduan' />;
         }
         const articlestyle = {
             maxWidth: "400px"
@@ -58,27 +63,28 @@ class AuthLogin extends React.Component {
                                     <h4 className="card-title mt-3 text-center">FOM LOGIN</h4>
                                     <p className="text-center">Anda Harus Login Terlebih Dahulu Untuk Menulis Pengaduan</p>
                                     <br />
-                                    <div className="card bg-light" >
-                                        <form onSubmit={this.SubmitLogin} className="card card-lg" style={{padding: "10px"}}>
-                                            <div className="form-group input-group">
-                                                <div className="input-group-prepend">
-                                                    <span className="input-group-text"> <i className="fa fa-user"></i> </span>
+                                    <div className="" >
+                                        <form className="ui large form" onSubmit={this.SubmitLogin}>
+                                            <div className="ui stacked segment">
+                                                <div className="field">
+                                                    <div className="ui left icon input">
+                                                        <i className="user icon"></i>
+                                                        <input type="text" name="username" onChange={this.onChange} value={username} placeholder="Username" />
+                                                    </div>
                                                 </div>
-                                                <input name="username" className="form-control" onChange={this.onChange} value={username} placeholder="Username" type="text" />
-                                            </div>
-                                            <div className="form-group input-group">
-                                                <div className="input-group-prepend">
-                                                    <span className="input-group-text"> <i className="fa fa-lock"></i> </span>
+                                                <div className="field">
+                                                    <div className="ui left icon input">
+                                                        <i className="lock icon"></i>
+                                                        <input type="text" name="password" onChange={this.onChange} value={password} placeholder="Password" />
+                                                    </div>
                                                 </div>
-                                                <input name="password" className="form-control" onChange={this.onChange} value={password} placeholder="password" type="text" />
+                                                <input className="ui fluid large teal submit button" value="Login" type="submit" />
                                             </div>
-                                            <div className="form-group">
-                                                <button type="submit" className="btn btn-success btn-block"><i className="fa fa-lock"></i> LOGIN </button>
-                                            </div>
-                                            <p className="divider-text">
-                                                <span className="bg-light">BELUM PUNYA AKUN ? <Link to="/Register"><button className="btn btn-primary">DAFTAR AKUN</button></Link></span>
-                                            </p>
+                                            <div className="ui error message"></div>
                                         </form>
+                                        <div className="ui message">
+                                            Belum Punya Akun? <Link to="/Register"> Daftar</Link>
+                                        </div>
                                     </div>
                                 </article>
                             </div>

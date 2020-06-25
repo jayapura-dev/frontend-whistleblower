@@ -70,37 +70,37 @@ class AuthRegister extends React.Component {
                                 <article className="card-body mx-auto" style={articlestyle}>
                                     <h4 className="card-title mt-3 text-center">REGISTRASI AKUN</h4>
                                     <br />
-                                    <div className="card bg-light" >
-                                        <form onSubmit={this.SubmitRegister} className="card card-lg" style={{padding: "10px"}}>
-                                            <div className="form-group input-group">
-                                                <div className="input-group-prepend">
-                                                    <span className="input-group-text"> <i className="fa fa-user"></i> </span>
+                                    <div className="card" >
+                                        <form onSubmit={this.SubmitRegister} className="ui large form" style={{padding: "10px"}}>
+                                            <div className="ui stacked segment">
+                                                <div className="field">
+                                                    <div className="ui left icon input">
+                                                        <i className="user icon"></i>
+                                                        <input type="text" name="username" onChange={this.onChange} value={username} placeholder="Username" />
+                                                    </div>
                                                 </div>
-                                                <input name="username" onChange={this.onChange} value={username} className="form-control" placeholder="Username" type="text" />
-                                            </div>
-                                            <div className="form-group input-group">
-                                                <div className="input-group-prepend">
-                                                    <span className="input-group-text"> <i className="fa fa-envelope"></i> </span>
+                                                <div className="field">
+                                                    <div className="ui left icon input">
+                                                        <i className="envelope outline icon"></i>
+                                                        <input type="text" name="email" onChange={this.onChange} value={email} placeholder="Email" />
+                                                    </div>
                                                 </div>
-                                                <input name="email" onChange={this.onChange} value={email} className="form-control" placeholder="Email address" type="email" />
-                                            </div>
-                                            <div className="form-group input-group">
-                                                <div className="input-group-prepend">
-                                                    <span className="input-group-text"> <i className="fa fa-lock"></i> </span>
+                                                <div className="field">
+                                                    <div className="ui left icon input">
+                                                        <i className="lock icon"></i>
+                                                        <input type="text" name="password" onChange={this.onChange} value={password} placeholder="Password" />
+                                                    </div>
                                                 </div>
-                                                <input name="password" onChange={this.onChange} value={password} className="form-control" placeholder="password" type="text" />
-                                            </div>
-                                            <div className="form-group input-group">
-                                                <div className="input-group-prepend">
-                                                    <span className="input-group-text"> <i className="fa fa-lock"></i> </span>
+                                                <div className="field">
+                                                    <div className="ui left icon input">
+                                                        <i className="lock icon"></i>
+                                                        <input type="text" name="password2" onChange={this.onChange} value={password2} placeholder="Password" />
+                                                    </div>
                                                 </div>
-                                                <input name="password2" onChange={this.onChange} value={password2} className="form-control" placeholder="Repeat password" type="text" />
-                                            </div>
-                                            <div className="form-group">
-                                                <button type="submit" className="btn btn-primary btn-block"><i className="fa fa-users"></i> Buat Akun  </button>
+                                                <input className="ui fluid large teal submit button" value="DAFTAR" type="submit" />
                                             </div>
                                             <p className="divider-text">
-                                                <span className="bg-light">SUDAH ADA AKUN ? <Link to="/Login"><button className="btn btn-success">Login</button></Link></span>
+                                                <span className="bg-light">Sudah Punya Akun ? <Link to="/Login">Login</Link></span>
                                             </p>
                                         </form>
                                     </div>        

@@ -2,8 +2,9 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { fetchPengaduan } from '../../actions/pengaduan';
 import PropTypes from 'prop-types';
+import { Link } from 'react-router-dom';
 
-class Pengaduan extends React.Component {
+class ReadPengaduan extends React.Component {
 
     static propTypes = {
         pengaduan: PropTypes.array.isRequired,
@@ -11,6 +12,7 @@ class Pengaduan extends React.Component {
     };
 
     componentDidMount() {
+        document.title = "Data Pengaduan Anda"
         this.props.fetchPengaduan();
     }
     
@@ -25,6 +27,10 @@ class Pengaduan extends React.Component {
                                     <p className="wow fadeInUp" data-wow-delay="0.2s">
                                         DATA PENGADUAN
                                     </p>
+                                    <Link to="/FormAduan">
+                                        <button className="ui green button"><i className="file alternate icon"></i> FORM PENGADUAN</button>
+                                    </Link>
+                                    
                                 </div>
                             </div>
                         </div>
@@ -40,13 +46,14 @@ class Pengaduan extends React.Component {
                                             <h2>TABLE PENGADUAN ANDA</h2>
                                         </div>
                                         <div className="card-block">
-                                            <table className="table table-bordered">
+                                            <table className="table ui fixed single line celled table">
                                                 <thead>
                                                     <tr>
                                                         <th>ID</th>    
                                                         <th>Title</th>
                                                         <th>Deskripsi</th>
                                                         <th>Tanggal</th>
+                                                        <th>Aksi</th>
                                                     </tr>
                                                 </thead>
                                                 <tbody>
@@ -56,6 +63,7 @@ class Pengaduan extends React.Component {
                                                         <td>{p.title}</td>
                                                         <td>{p.deskripsi_aduan}</td>
                                                         <td>{p.date}</td>
+                                                        <td></td>
                                                     </tr>
                                                 ))}
                                                 </tbody>
@@ -72,8 +80,8 @@ class Pengaduan extends React.Component {
     }
 }
 
-const mapStateToProps = (state) => {
-    return { pengaduan:  Object.values(state.pengaduan) };
-}
+const mapStateToProps = (state) => ({
+  pengaduan: state.pengaduan.pengaduan,
+});
 
-export default connect(mapStateToProps, { fetchPengaduan })(Pengaduan);
+export default connect(mapStateToProps, { fetchPengaduan })(ReadPengaduan);

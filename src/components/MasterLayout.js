@@ -12,25 +12,29 @@ class Header extends React.Component{
     };
 
     render() {
-
         const { isAuthenticated, user } = this.props.auth;
 
         const AuthHeader = (
             <div className="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul className="navbar-nav mr-auto">
                 </ul>
-                <ul className="navbar-nav my-2 my-lg-0">
+                <ul className="navbar-nav my-2 my-lg-0">    
                     <li className="nav-link page-scroll">
-                        <Link to="/Pengaduan" ><button className="btn btn-success">Pengaduan</button></Link>
+                        <Link to="/Pengaduan" ><button className="ui green button"><i className="fa fa-bookmark"></i> Pengaduan</button></Link>
                     </li>
-                     <div className="dropdown">
-                        <button type="button" className="btn btn-primary dropdown-toggle" data-toggle="dropdown">
-                            <strong><i className="fa fa-user"></i> {user ? `${user.username}` : ''}</strong>
-                        </button>
-                        <div className="dropdown-menu">
-                            <button onClick={this.props.UserLogout} className="dropdown-item" href="#">Logout</button>
-                        </div>
-                    </div> 
+                    <li className="nav-link page-scroll">
+                        <div className="ui dropdown item">
+                            <button type="button" className="ui green button dropdown-toggle" data-toggle="dropdown">
+                                <strong><i className="fa fa-user"></i> {user ? `${user.email}` : ''}</strong>
+                            </button>
+                            <div className="dropdown-menu">
+                                <button onClick={this.props.UserLogout} className="dropdown-item" href="#"><i className="fa fa-sign-out"></i> Logout</button>
+                            </div>
+                            <div className="dropdown-menu">
+                                <button onClick={this.props.UserLogout} className="dropdown-item" href="#"><i className="fa fa-sign-out"></i> Logout</button>
+                            </div>
+                        </div> 
+                    </li>
                 </ul>
             </div>
         );
@@ -41,10 +45,10 @@ class Header extends React.Component{
                 </ul>
                 <ul className="navbar-nav my-2 my-lg-0">
                     <li className="nav-link page-scroll">
-                        <Link to="/CariAduan"><button className="btn btn-primary"><i className="fa fa-bookmark"></i> Cek Aduan</button></Link>
+                        <Link to="/CariAduan"><button className="ui teal button"><i className="fa fa-bookmark"></i> Cek Aduan</button></Link>
                     </li>
                     <li className="nav-link page-scroll">
-                        <Link to="/Login"><button className="btn btn-primary"><i className="fa fa-lock"></i> Login</button></Link>
+                        <Link to="/Login"><button className="ui teal button"><i className="fa fa-lock"></i> Login</button></Link>
                     </li>
                 </ul>
             </div>

@@ -10,9 +10,9 @@ import Footer from './Footer';
 import Alerts from './Alerts';
 import Home from './page/Home';
 import PetunjukAduan from './page/PetunjukAduan';
-import Pengaduan from './page/Pengaduan';
+import ReadPengaduan from './pengaduan/r-pengaduan';
 import TataCara from './page/TataCara';
-import FormAduan from './page/FormAduan';
+import FormAduan from './pengaduan/Create';
 import Register from './auth/AuthRegister';
 import AuthLogin from './auth/AuthLogin';
 import Private from './private/PrivateRoute';
@@ -43,7 +43,7 @@ class App extends React.Component {
                                     <Route path="/" exact component={Home} />
                                     <Private path="/FormAduan" component={FormAduan} />
                                     <Route path="/PetunjukAduan" component={PetunjukAduan} />
-                                    <Private path="/Pengaduan" component={Pengaduan} />
+                                    <Private path="/Pengaduan" component={ReadPengaduan} />
                                     <Route path="/Register" component={Register} />
                                     <Route path="/Login" component={AuthLogin} />
                                 </Switch>
